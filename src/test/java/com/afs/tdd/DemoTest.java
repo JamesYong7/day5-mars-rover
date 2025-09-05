@@ -25,7 +25,11 @@ class DemoTest {
 
     @Test
     public void should_return_x_0_y_1_W_when_x_1_y_1_move_W(){
-
+        MarsRover marsRover = new MarsRover(1,1,"W");
+        marsRover.execute("M");
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(1,marsRover.getPositionY());
+        assertEquals("W",marsRover.getDirection());
     }
 
     @Test
