@@ -34,7 +34,11 @@ class DemoTest {
 
     @Test
     public void should_return_x_2_y_1_S_when_x_1_y_1_move_E(){
-
+        MarsRover marsRover = new MarsRover(1,1,"E");
+        marsRover.execute("M");
+        assertEquals(2,marsRover.getPositionX());
+        assertEquals(1,marsRover.getPositionY());
+        assertEquals("E",marsRover.getDirection());
     }
 
     @Test

@@ -23,6 +23,9 @@ public class MarsRover {
                 case "W":
                     this.x -= 1;
                     break;
+                case "E":
+                    this.x += 1;
+                    break;
             }
         }
     }
