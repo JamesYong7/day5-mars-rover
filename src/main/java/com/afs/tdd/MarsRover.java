@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class MarsRover {
     public static final String[] DIRECTIONS = {"N", "E", "S", "W"};
+    public static final String MOVE = "M";
+    public static final String LEFT = "L";
+    public static final String RIGHT = "R";
 
     private int x;
     private int y;
@@ -16,7 +19,7 @@ public class MarsRover {
     }
 
     public void execute(String command) {
-        if (command.equals("M")) {
+        if (command.equals(MOVE)) {
             switch (direction) {
                 case "N":
                     this.y++;
@@ -31,10 +34,10 @@ public class MarsRover {
                     this.x++;
                     break;
             }
-        } else if (command.equals("L")) {
+        } else if (command.equals(LEFT)) {
             int index = Arrays.asList(DIRECTIONS).indexOf(this.direction);
             this.direction = DIRECTIONS[(index + 3) % DIRECTIONS.length];
-        } else if (command.equals("R")) {
+        } else if (command.equals(RIGHT)) {
             int index = Arrays.asList(DIRECTIONS).indexOf(this.direction);
             this.direction = DIRECTIONS[(index + 1) % DIRECTIONS.length];
         }
