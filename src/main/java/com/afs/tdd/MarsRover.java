@@ -3,7 +3,7 @@ package com.afs.tdd;
 import java.util.Arrays;
 
 public class MarsRover {
-    public final static String[] DIRECTIONS = {"N", "E", "S", "W"};
+    public static final String[] DIRECTIONS = {"N", "E", "S", "W"};
 
     private int x;
     private int y;
