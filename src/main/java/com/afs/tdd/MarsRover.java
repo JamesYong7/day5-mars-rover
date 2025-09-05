@@ -12,7 +12,9 @@ public class MarsRover {
     }
 
     public void execute(String command) {
-
+        if (command.equals("M") && direction.equals("N")) {
+            this.y += 1;
+        }
     }
     public Integer getPositionX() {
         return this.x;
