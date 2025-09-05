@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public class MarsRover {
     private static final String[] DIRECTIONS = {"N", "E", "S", "W"};
-    private static final String MOVE = "M";
-    private static final String LEFT = "L";
-    private static final String RIGHT = "R";
 
     private int x;
     private int y;
