@@ -43,7 +43,11 @@ class DemoTest {
 
     @Test
     public void should_return_x_1_y_1_W_when_x_1_y_1_left_N(){
-
+        MarsRover marsRover = new MarsRover(1,1,"N");
+        marsRover.execute("L");
+        assertEquals(1,marsRover.getPositionX());
+        assertEquals(1,marsRover.getPositionY());
+        assertEquals("W",marsRover.getDirection());
     }
 
     @Test

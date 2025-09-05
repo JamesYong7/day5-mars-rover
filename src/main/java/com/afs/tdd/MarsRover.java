@@ -27,14 +27,19 @@ public class MarsRover {
                     this.x += 1;
                     break;
             }
+        }else if (command.equals("L")){
+            this.direction = "W";
         }
     }
+
     public Integer getPositionX() {
         return this.x;
     }
+
     public Integer getPositionY() {
         return this.y;
     }
+
     public String getDirection() {
         return this.direction;
     }
