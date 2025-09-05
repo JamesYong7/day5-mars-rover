@@ -52,16 +52,30 @@ class DemoTest {
 
     @Test
     public void should_return_x_1_y_1_N_when_x_1_y_1_left_E(){
-
+        MarsRover marsRover = new MarsRover(1,1,"E");
+        marsRover.execute("L");
+        assertEquals(1,marsRover.getPositionX());
+        assertEquals(1,marsRover.getPositionY());
+        assertEquals("N",marsRover.getDirection());
     }
 
     @Test
     public void should_return_x_1_y_1_E_when_x_1_y_1_left_S(){
+        MarsRover marsRover = new MarsRover(1,1,"S");
+        marsRover.execute("L");
+        assertEquals(1,marsRover.getPositionX());
+        assertEquals(1,marsRover.getPositionY());
+        assertEquals("E",marsRover.getDirection());
 
     }
 
     @Test
     public void should_return_x_1_y_1_S_when_x_1_y_1_left_W(){
+        MarsRover marsRover = new MarsRover(1,1,"W");
+        marsRover.execute("L");
+        assertEquals(1,marsRover.getPositionX());
+        assertEquals(1,marsRover.getPositionY());
+        assertEquals("S",marsRover.getDirection());
 
     }
 

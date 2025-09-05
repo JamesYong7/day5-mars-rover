@@ -1,6 +1,10 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
+    public final static String[] DIRECTIONS = {"N", "E", "S", "W"};
+
     private int x;
     private int y;
     private String direction;
@@ -28,7 +32,8 @@ public class MarsRover {
                     break;
             }
         }else if (command.equals("L")){
-            this.direction = "W";
+            int index = Arrays.asList(DIRECTIONS).indexOf(this.direction);
+            this.direction = DIRECTIONS[(index + 3) % 4];
         }
     }
 
