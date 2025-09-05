@@ -1,18 +1,24 @@
 package com.afs.tdd;
 
 public class MarsRover {
+    private int x;
+    private int y;
+    private String direction;
 
-    public MarsRover(int i, int i1, String n) {
+    public MarsRover(int x, int y, String direction) {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
     }
 
     public void execute(String command) {
 
     }
-    public String getPositionX() {
-        return "1";
+    public Integer getPositionX() {
+        return this.x;
     }
-    public String getPositionY() {
-        return "2";
+    public Integer getPositionY() {
+        return this.y;
     }
     public String getDirection() {
         return "N";

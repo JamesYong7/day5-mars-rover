@@ -9,14 +9,18 @@ class DemoTest {
     public void should_return_x_1_y_2_N_when_x_1_y_1_move_N(){
         MarsRover marsRover = new MarsRover(1,1,"N");
         marsRover.execute("M");
-        assertEquals("1",marsRover.getPositionX());
-        assertEquals("2",marsRover.getPositionY());
+        assertEquals(1,marsRover.getPositionX());
+        assertEquals(2,marsRover.getPositionY());
         assertEquals("N",marsRover.getDirection());
     }
 
     @Test
     public void should_return_x_1_y_0_S_when_x_1_y_1_move_S(){
-
+        MarsRover marsRover = new MarsRover(1,1,"S");
+        marsRover.execute("M");
+        assertEquals(1,marsRover.getPositionX());
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals("N",marsRover.getDirection());
     }
 
     @Test
