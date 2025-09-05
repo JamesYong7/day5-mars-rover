@@ -16,27 +16,27 @@ public class MarsRover {
     }
 
     public void execute(String command) {
-        if (command.equals("M") ) {
+        if (command.equals("M")) {
             switch (direction) {
                 case "N":
-                    this.y += 1;
+                    this.y++;
                     break;
                 case "S":
-                    this.y -= 1;
+                    this.y--;
                     break;
                 case "W":
-                    this.x -= 1;
+                    this.x--;
                     break;
                 case "E":
-                    this.x += 1;
+                    this.x++;
                     break;
             }
-        }else if (command.equals("L")){
+        } else if (command.equals("L")) {
             int index = Arrays.asList(DIRECTIONS).indexOf(this.direction);
-            this.direction = DIRECTIONS[(index + 3) % 4];
-        }else if (command.equals("R")){
+            this.direction = DIRECTIONS[(index + 3) % DIRECTIONS.length];
+        } else if (command.equals("R")) {
             int index = Arrays.asList(DIRECTIONS).indexOf(this.direction);
-            this.direction = DIRECTIONS[(index + 1) % 4];
+            this.direction = DIRECTIONS[(index + 1) % DIRECTIONS.length];
         }
     }
 
