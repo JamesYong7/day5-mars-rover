@@ -8,8 +8,10 @@ class DemoTest {
     @Test
     public void should_return_x_1_y_2_N_when_x_1_y_1_move_N(){
         MarsRover marsRover = new MarsRover(1,1,"N");
-        marsRover.move();
-        assertEquals("1 2 N",marsRover.getPosition());
+        marsRover.execute("M");
+        assertEquals("1",marsRover.getPositionX());
+        assertEquals("2",marsRover.getPositionY());
+        assertEquals("N",marsRover.getDirection());
     }
 
     @Test
