@@ -34,6 +34,9 @@ public class MarsRover {
         }else if (command.equals("L")){
             int index = Arrays.asList(DIRECTIONS).indexOf(this.direction);
             this.direction = DIRECTIONS[(index + 3) % 4];
+        }else if (command.equals("R")){
+            int index = Arrays.asList(DIRECTIONS).indexOf(this.direction);
+            this.direction = DIRECTIONS[(index + 1) % 4];
         }
     }
 
