@@ -12,8 +12,13 @@ public class MarsRover {
     }
 
     public void execute(String command) {
-        if (command.equals("M") && direction.equals("N")) {
-            this.y += 1;
+        if (command.equals("M") ) {
+            if (direction.equals("N")) {
+                this.y += 1;
+            }
+            else if (direction.equals("S")) {
+                this.y -= 1;
+            }
         }
     }
     public Integer getPositionX() {
@@ -23,6 +28,6 @@ public class MarsRover {
         return this.y;
     }
     public String getDirection() {
-        return "N";
+        return this.direction;
     }
 }
