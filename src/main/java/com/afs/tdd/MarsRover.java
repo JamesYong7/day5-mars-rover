@@ -3,10 +3,10 @@ package com.afs.tdd;
 import java.util.Arrays;
 
 public class MarsRover {
-    public static final String[] DIRECTIONS = {"N", "E", "S", "W"};
-    public static final String MOVE = "M";
-    public static final String LEFT = "L";
-    public static final String RIGHT = "R";
+    private static final String[] DIRECTIONS = {"N", "E", "S", "W"};
+    private static final String MOVE = "M";
+    private static final String LEFT = "L";
+    private static final String RIGHT = "R";
 
     private int x;
     private int y;
