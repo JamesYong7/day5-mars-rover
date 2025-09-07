@@ -41,6 +41,23 @@ public class MarsRover {
                 int rightIndex = Arrays.asList(DIRECTIONS).indexOf(this.direction);
                 this.direction = DIRECTIONS[(rightIndex + 1) % DIRECTIONS.length];
                 break;
+            case B:
+                switch (direction) {
+                    case "N":
+                        this.y--;
+                        break;
+                    case "S":
+                        this.y++;
+                        break;
+                    case "W":
+                        this.x++;
+                        break;
+                    case "E":
+                        this.x--;
+                        break;
+                }
+                break;
+
         }
     }
 

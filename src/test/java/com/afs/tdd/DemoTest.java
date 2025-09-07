@@ -114,4 +114,40 @@ class DemoTest {
         assertEquals(1,marsRover.getPositionY());
         assertEquals("N",marsRover.getDirection());
     }
+
+    @Test
+    public void should_return_x_1_y_0_N_when_x_1_y_1_back_N(){
+        MarsRover marsRover = new MarsRover(1,1,"N");
+        marsRover.execute(Command.B);
+        assertEquals(1, marsRover.getPositionX());
+        assertEquals(0, marsRover.getPositionY());
+        assertEquals("N", marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_x_0_y_1_E_when_x_1_y_1_back_E(){
+        MarsRover marsRover = new MarsRover(1,1,"E");
+        marsRover.execute(Command.B);
+        assertEquals(0, marsRover.getPositionX());
+        assertEquals(1, marsRover.getPositionY());
+        assertEquals("E", marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_x_1_y_2_S_when_x_1_y_1_back_S(){
+        MarsRover marsRover = new MarsRover(1,1,"S");
+        marsRover.execute(Command.B);
+        assertEquals(1, marsRover.getPositionX());
+        assertEquals(2, marsRover.getPositionY());
+        assertEquals("S", marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_x_1_y_0_W_when_x_1_y_1_back_N(){
+        MarsRover marsRover = new MarsRover(1,1,"W");
+        marsRover.execute(Command.B);
+        assertEquals(2, marsRover.getPositionX());
+        assertEquals(1, marsRover.getPositionY());
+        assertEquals("W", marsRover.getDirection());
+    }
 }
