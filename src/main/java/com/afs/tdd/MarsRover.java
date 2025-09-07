@@ -7,18 +7,6 @@ import java.util.Map;
 
 public class MarsRover {
     private static final String[] DIRECTIONS = {"N", "E", "S", "W"};
-    private static final Map<String, int[]> MOVE_MAP = new HashMap<>();
-    private static final Map<String, int[]> BACK_MAP = new HashMap<>();
-    static {
-        MOVE_MAP.put("N", new int[]{0, 1});
-        MOVE_MAP.put("E", new int[]{1, 0});
-        MOVE_MAP.put("S", new int[]{0, -1});
-        MOVE_MAP.put("W", new int[]{-1, 0});
-        BACK_MAP.put("N", new int[]{0, -1});
-        BACK_MAP.put("E", new int[]{-1, 0});
-        BACK_MAP.put("S", new int[]{0, 1});
-        BACK_MAP.put("W", new int[]{1, 0});
-    }
 
     private int x;
     private int y;
@@ -30,26 +18,52 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public void execute(Command command) {
-        if (command == Command.M) {
-            int[] move = MOVE_MAP.get(direction);
-            this.x += move[0];
-            this.y += move[1];
-        } else if (command == Command.B) {
-            int[] move = BACK_MAP.get(direction);
-            this.x += move[0];
-            this.y += move[1];
-        } else if (command == Command.L) {
-            int leftIndex = Arrays.asList(DIRECTIONS).indexOf(this.direction);
-            this.direction = DIRECTIONS[(leftIndex + 3) % DIRECTIONS.length];
-        } else if (command == Command.R) {
-            int rightIndex = Arrays.asList(DIRECTIONS).indexOf(this.direction);
-            this.direction = DIRECTIONS[(rightIndex + 1) % DIRECTIONS.length];
+    public void move() {
+        switch (direction) {
+            case "N":
+                this.y++;
+                break;
+            case "E":
+                this.x++;
+                break;
+            case "S":
+                this.y--;
+                break;
+            case "W":
+                this.x--;
+                break;
         }
     }
 
-    public void batchExecute(List<Command> commands) {
-        commands.forEach(this::execute);
+    public void back() {
+        switch (direction) {
+            case "N":
+                this.y--;
+                break;
+            case "E":
+                this.x--;
+                break;
+            case "S":
+                this.y++;
+                break;
+            case "W":
+                this.x++;
+                break;
+        }
+    }
+
+    public void left() {
+        int leftIndex = Arrays.asList(DIRECTIONS).indexOf(this.direction);
+        this.direction = DIRECTIONS[(leftIndex + 3) % DIRECTIONS.length];
+    }
+
+    public void right() {
+        int rightIndex = Arrays.asList(DIRECTIONS).indexOf(this.direction);
+        this.direction = DIRECTIONS[(rightIndex + 1) % DIRECTIONS.length];
+    }
+
+    public void batchExecute(List<RoverCommand> commands) {
+        commands.forEach(cmd -> cmd.execute(this));
     }
 
     public Integer getPositionX() {
