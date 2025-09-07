@@ -150,4 +150,21 @@ class DemoTest {
         assertEquals(1, marsRover.getPositionY());
         assertEquals("W", marsRover.getDirection());
     }
+
+    @Test
+    public void should_execute_batch_commands_and_return_final_position_and_direction() {
+        MarsRover marsRover = new MarsRover(1, 1, "N");
+        marsRover.batchExecute(java.util.Arrays.asList(
+                Command.M, // (1,2,N)
+                Command.L, // (1,2,W)
+                Command.M, // (0,2,W)
+                Command.R, // (0,2,N)
+                Command.B, // (0,1,N)
+                Command.B, // (0,0,N)
+                Command.M  // (0,1,N)
+        ));
+        assertEquals(0, marsRover.getPositionX());
+        assertEquals(1, marsRover.getPositionY());
+        assertEquals("N", marsRover.getDirection());
+    }
 }

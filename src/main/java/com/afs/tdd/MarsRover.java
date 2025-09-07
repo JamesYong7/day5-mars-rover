@@ -2,6 +2,7 @@ package com.afs.tdd;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MarsRover {
@@ -45,6 +46,10 @@ public class MarsRover {
             int rightIndex = Arrays.asList(DIRECTIONS).indexOf(this.direction);
             this.direction = DIRECTIONS[(rightIndex + 1) % DIRECTIONS.length];
         }
+    }
+
+    public void batchExecute(List<Command> commands) {
+        commands.forEach(this::execute);
     }
 
     public Integer getPositionX() {
