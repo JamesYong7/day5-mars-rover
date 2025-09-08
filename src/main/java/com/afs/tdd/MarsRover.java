@@ -1,9 +1,7 @@
 package com.afs.tdd;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MarsRover {
     private static final String[] DIRECTIONS = {"N", "E", "S", "W"};
